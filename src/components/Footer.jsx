@@ -9,7 +9,7 @@ function Footer() {
         <div style={{display:'flex',gap:'1rem'}}>
           <a href="#">Instagram</a>
           <a href="mailto:valasahasrarao@gmail.com">Email</a>
-          <span style={{opacity:.7}}>Designed in krishna.</span>
+          <span style={{opacity:.7}}>Designed by Saikrishna.</span>
         </div>
       </div>
     </footer>
