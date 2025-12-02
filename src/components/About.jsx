@@ -7,8 +7,8 @@ function About() {
       <div className="container about-grid">
         <div>
           <h2>About Vala</h2>
-          <p>“I don’t just stand in front of the camera — I carry a mood.</p>
-          <p>I specialise in ethnic and festive looks, where small details like a smile, a glance, or the fall of a dupatta can change the entire frame.</p>
+          <p>“I don’t just make stand in front of the camera — I makecarry a mood.</p>
+          <p>I craft ethnic and festive looks where subtle gestures—a smile, a glance, the fall of a dupatta—transform the frame.</p>
           <p>I love working with photographers, designers, wedding planners and brands who value culture, elegance, and emotion in their visuals.”</p>
         </div>
         <div>

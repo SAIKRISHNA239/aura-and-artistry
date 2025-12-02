@@ -54,25 +54,6 @@ npm run preview
       └─ testimonial-2.jpg (optional)
 ```
 
-## Content Notes
-- Update copy inside the components in `src/components/`.
-- Testimonials support optional images per card. Place under `public/images/` and reference by relative path (e.g., `/images/testimonial-1.jpg`).
-- The page title and favicon are configured in `index.html`, and `App.jsx` also sets `document.title` on mount.
-
-## Deploying to Netlify
-1. Build the project: `npm run build`
-2. In Netlify, set:
-   - Base directory: `./`
-   - Build command: `npm run build`
-   - Publish directory: `dist`
-3. Or drag-and-drop the `dist/` folder to Netlify.
-4. Configure a custom domain in Netlify Domain settings.
-
-## SEO & Social (optional)
-Add meta tags in `index.html`:
-- `meta name="description" content="..."`
-- `meta property="og:title"`, `og:description`, `og:image`, `og:url`
-
 ## License
 © 2025 Aura & Artistry. All rights reserved.
 # aura-and-artistry

@@ -26,11 +26,6 @@ function Highlights() {
             </div>
           ))}
         </div>
-        <div className="stats">
-          <div className="stat">+9 Concept Shoots</div>
-          <div className="stat">+7 Collaborations</div>
-          <div className="stat">3 Cities Worked In</div>
-        </div>
       </div>
     </div>
   )

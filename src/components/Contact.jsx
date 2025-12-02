@@ -1,8 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import { HiOutlineEnvelope, HiOutlinePaperAirplane } from 'react-icons/hi2'
 import { FaInstagram } from 'react-icons/fa'
 
 function Contact() {
+  const [form, setForm] = useState({ name:'', brand:'', email:'', message:'' })
+  const [status, setStatus] = useState({ sending:false, ok:null, msg:'' })
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setForm(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    if (status.sending) return
+    setStatus({ sending:true, ok:null, msg:'' })
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      await emailjs.send(serviceId, templateId, {
+        from_name: form.name,
+        from_email: form.email,
+        brand: form.brand,
+        message: form.message,
+      }, { publicKey })
+      setStatus({ sending:false, ok:true, msg:'Thanks! Your message has been sent.' })
+      setForm({ name:'', brand:'', email:'', message:'' })
+    } catch (err) {
+      setStatus({ sending:false, ok:false, msg:'Something went wrong. Please try again or email me directly.' })
+    }
+  }
   return (
     <div className="section contact" style={{background:'linear-gradient(180deg, #faf7f8, #f3ebe8)'}}>
       <div className="container wrap">
@@ -14,7 +43,7 @@ function Contact() {
               <HiOutlineEnvelope style={{color:'var(--plum)'}}/>
               <a href="mailto:valasahasrarao@gmail.com">valasahasrarao@gmail.com</a>
             </div>
-            <div style={{marginTop:'.6rem',display:'flex',alignItems:'center',gap:'.5rem'}}>
+            {/* <div style={{marginTop:'.6rem',display:'flex',alignItems:'center',gap:'.5rem'}}>
               <a
                 href="https://instagram.com/valasahasra"
                 target="_blank"
@@ -26,7 +55,7 @@ function Contact() {
                 <FaInstagram style={{fontSize:20}}/>
               </a>
               <span style={{opacity:.8}}>@valasahasra</span>
-            </div>
+            </div> */}
           </div>
           <a
             className="btn gold"
@@ -35,17 +64,23 @@ function Contact() {
             target="_blank"
             rel="noreferrer"
           >
-            Book on WhatsApp
+            Book on Slot
           </a>
         </div>
         <div>
-          <form className="form" onSubmit={(e)=>e.preventDefault()}>
+          <form className="form" onSubmit={handleSubmit}>
             <div style={{display:'grid',gap:'.25rem'}}>
-              <input className="input" placeholder="Name" />
-              <input className="input" placeholder="Brand / Photographer / Event Type" />
-              <input className="input" placeholder="Email" type="email" />
-              <textarea className="textarea" placeholder="Message / Concept Description"></textarea>
-              <button className="btn" type="submit"><HiOutlinePaperAirplane style={{marginRight:6}}/> Send</button>
+              <input className="input" name="name" value={form.name} onChange={handleChange} placeholder="Name" required />
+              <input className="input" name="brand" value={form.brand} onChange={handleChange} placeholder="Brand / Photographer / Event Type" />
+              <input className="input" name="email" value={form.email} onChange={handleChange} placeholder="Email" type="email" required />
+              <textarea className="textarea" name="message" value={form.message} onChange={handleChange} placeholder="Message / Concept Description" required></textarea>
+              <button className="btn" type="submit" disabled={status.sending}>
+                <HiOutlinePaperAirplane style={{marginRight:6}}/>
+                {status.sending ? 'Sending…' : 'Send'}
+              </button>
+              {status.msg && (
+                <div style={{marginTop:'.25rem', color: status.ok ? 'green' : 'crimson'}}>{status.msg}</div>
+              )}
             </div>
           </form>
         </div>
