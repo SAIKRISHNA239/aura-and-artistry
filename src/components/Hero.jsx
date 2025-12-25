@@ -13,7 +13,7 @@ function Hero() {
       <div>
         <div className="eyebrow">Ethnic & Lifestyle Muse</div>
         <h1>Elegance in Every Frame. Grace in Every Moment.</h1>
-        <p className="sub">I help brands, photographers, and event creators bring their stories to life through expressive, elegant visuals — especially in ethnic and festive spaces.</p>
+        <p className="sub">We help brands, photographers, and event creators bring their stories to life through expressive, elegant visuals — especially in ethnic and festive spaces.</p>
         <div className="hero-actions">
           <button className="btn" onClick={()=>document.getElementById('portfolio')?.scrollIntoView({behavior:'smooth'})}>View Portfolio</button>
           <button className="btn outline" onClick={()=>document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}>Let’s Collaborate</button>
@@ -23,7 +23,7 @@ function Hero() {
         <div className="portrait-wrap">
           <div className="portrait-bg"></div>
           <img className="portrait" src="/images/vala-hero.jpg" alt="Vala Sahasra portrait" onError={handleError} />
-          <div className="float-tag">⭐ Featured in ethnic, bridal & festive concepts</div>
+          <div className="float-tag">⭐ Featured in ethnic & bridal concepts</div>
         </div>
       </div>
     </div>

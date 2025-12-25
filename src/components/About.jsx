@@ -6,10 +6,10 @@ function About() {
     <div className="section light">
       <div className="container about-grid">
         <div>
-          <h2>About Vala</h2>
-          <p>“I don’t just make stand in front of the camera — I makecarry a mood.</p>
-          <p>I craft ethnic and festive looks where subtle gestures—a smile, a glance, the fall of a dupatta—transform the frame.</p>
-          <p>I love working with photographers, designers, wedding planners and brands who value culture, elegance, and emotion in their visuals.”</p>
+          <h2>About Us</h2>
+          <p>“We don’t just make stand in front of the camera — We makecarry a mood.</p>
+          <p>We craft ethnic and festive looks where subtle gestures—a smile, a glance, the fall of a dupatta—transform the frame.</p>
+          <p>We love working with photographers, designers, wedding planners and brands who value culture, elegance, and emotion in their visuals.”</p>
         </div>
         <div>
           <div className="kv-grid">

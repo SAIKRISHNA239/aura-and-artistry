@@ -2,19 +2,19 @@ import React from 'react'
 
 function Highlights() {
   const bullets = [
-    {t:'Camera-Ready Presence', d:'Comfortable with close-ups, motion shots, and expressive portraits.'},
-    {t:'Ethnic Specialisation', d:'Strong fit for bridal, festive, and culturally rooted visuals.'},
-    {t:'Professional Mindset', d:'On time, prepared, collaborative, and adaptable on set.'},
-    {t:'Versatile Expression', d:'From soft, dreamy looks to confident, powerful frames.'},
+    {t:'Camera-Ready Presence', d:'Every detail is thoughtfully designed to look stunning on camera — from décor and outfits to moments that feel natural, joyful, and unforgettable.'},
+    {t:'Ethnic Specialisation', d:'Specialising in weddings, pre-wedding rituals, and festive celebrations rooted in tradition, culture, and timeless elegance.'},
+    {t:'Professional Mindset', d:'From concept to execution, we work with precision, punctuality, and clear coordination — ensuring a stress-free and seamless celebration.'},
+    {t:'Versatile Expression', d:'Whether it’s a soft, elegant vibe or a bold, grand celebration, we adapt our creativity to match your vision perfectly.'},
   ]
   return (
     <div className="section beige highlights">
       <div className="container">
-        <h2>Why Work With Me</h2>
+        <h2>Why Work With Us</h2>
         <p style={{marginTop:'.5rem'}}>
-          From concept moodboards to day-of coordination, I bring calm, clarity, and a refined aesthetic to every detail—so your story shines through each frame.
-          I style your look and your venue theme with the artistic eye-so your entire wedding feels cohensive,stunning, and unforgottable.”We plan from what you wear to set to your venue with a beatiful theme.”
-          I collaborate closely with your planner, photographer, and glam team to keep timelines smooth and every moment magazine-worthy.
+          From concept moodboards to day-of coordination, We bring calm, clarity, and a refined aesthetic to every detail—so your story shines through each frame.
+          We style your look and your venue theme with the artistic eye-so your entire wedding feels cohensive,stunning, and unforgottable.”We plan from what you wear to set to your venue with a beatiful theme.”
+          We collaborate closely with your planner, photographer, and glam team to keep timelines smooth and every moment magazine-worthy.
           <br/>
           <strong>“WE PLAN,YOU PARTY”</strong>
         </p>

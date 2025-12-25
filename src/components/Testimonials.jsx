@@ -2,7 +2,7 @@ import React from 'react'
 
 function Testimonials() {
   const t = [
-    {q:'“Vala has a very natural presence on camera. Her expressions and body language made our ethnic campaign feel classy and warm.”', img:'/images/testimonial-1.jpg'},
+    {q:'“With a presence that feels effortlessly real, Vala brings every bridal and groom styling moment to life. Her poise, expressions, and eye for elegant outfits added a luxurious warmth to our ethnic campaign.”', img:'/images/testimonial-1.jpg'},
     {q:'“Elegant and effortless. She brought a cinematic warmth to our festive concept shoot.”', img:'/images/testimonial-2.jpg'},
   ]
   const ph = 'data:image/svg+xml;utf8,' + encodeURIComponent(
