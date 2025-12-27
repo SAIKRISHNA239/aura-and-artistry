@@ -15,21 +15,39 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (status.sending) return
+    
+    // Validate form
+    if (!form.name || !form.email || !form.message) {
+      setStatus({ sending:false, ok:false, msg:'Please fill in all required fields.' })
+      return
+    }
+    
     setStatus({ sending:true, ok:null, msg:'' })
     try {
       const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
       const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
       const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-      await emailjs.send(serviceId, templateId, {
+      
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error('EmailJS configuration missing. Check environment variables.')
+      }
+      
+      console.log('EmailJS config:', { serviceId, templateId, publicKey })
+      console.log('Form data:', form)
+      
+      const result = await emailjs.send(serviceId, templateId, {
         from_name: form.name,
         from_email: form.email,
-        brand: form.brand,
-        message: form.message,
-      }, { publicKey })
+        message: form.brand ? `${form.brand}\n\n${form.message}` : form.message,
+      }, publicKey)
+      
+      console.log('EmailJS success:', result)
       setStatus({ sending:false, ok:true, msg:'Thanks! Your message has been sent.' })
       setForm({ name:'', brand:'', email:'', message:'' })
     } catch (err) {
-      setStatus({ sending:false, ok:false, msg:'Something went wrong. Please try again or email me directly.' })
+      console.error('EmailJS error:', err)
+      console.error('Error details:', err.message, err.status, err.text)
+      setStatus({ sending:false, ok:false, msg:`Error: ${err.message || 'Something went wrong. Please try again or email me directly.'}` })
     }
   }
   return (
